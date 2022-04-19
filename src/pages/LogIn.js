@@ -3,8 +3,10 @@ import "../css/login.css"
 import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios';
 import Footer from '../components/Footer';
+export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const LogIn = (props) =>{
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -25,7 +27,7 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post("http://localhost:8080/auth/login",{
+            .post("https://3.36.49.50:8080/auth/login",{
                 "email" : email,
                 "password" : password
             })
