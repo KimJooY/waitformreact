@@ -13,7 +13,7 @@ import SelectedBoard from './pages/SelectedBoard';
 const App = () => {
   return (
       <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Route path="/" component = {Home}  exact></Route>
             <Route path="/login" component = {LogIn}></Route>
             <AuthRoute path="/write" component = {Write}></AuthRoute>
