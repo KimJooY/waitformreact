@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/waitformreact/static/css/main.00758351.css",
-    "main.js": "/waitformreact/static/js/main.061d9392.js",
+    "main.js": "/waitformreact/static/js/main.14733f7f.js",
     "static/js/787.bda5b200.chunk.js": "/waitformreact/static/js/787.bda5b200.chunk.js",
     "static/media/handshake.jpg": "/waitformreact/static/media/handshake.6ddb9ae752bdf6635874.jpg",
     "index.html": "/waitformreact/index.html",
     "main.00758351.css.map": "/waitformreact/static/css/main.00758351.css.map",
-    "main.061d9392.js.map": "/waitformreact/static/js/main.061d9392.js.map",
+    "main.14733f7f.js.map": "/waitformreact/static/js/main.14733f7f.js.map",
     "787.bda5b200.chunk.js.map": "/waitformreact/static/js/787.bda5b200.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00758351.css",
-    "static/js/main.061d9392.js"
+    "static/js/main.14733f7f.js"
   ]
 }
