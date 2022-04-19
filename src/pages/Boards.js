@@ -6,7 +6,6 @@ import isLogin from "../control/isLogin";
 import Board from "../components/Board";
 import getAccessToken from "../control/getAccessToken";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import '../css/post.css'
 import { useHistory } from "react-router-dom";
 export const API_BASE_ROOT = process.env.API_BASE_ROOT;
@@ -22,7 +21,7 @@ const Boards = (props) =>{
         const token =getAccessToken();
         console.log(token);
         axios
-        .get(API_BASE_ROOT+"/board/me/list",
+        .get("https://3.36.49.50:8080/board/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

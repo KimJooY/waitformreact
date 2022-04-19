@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/write.css"
 import AlarmModal from "./AlarmModal";
-import Footer from "../components/Footer";
 import NavBlack from "../components/NavBlack";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -65,7 +64,7 @@ const Wirte = (props) =>{
         console.log(getCKEditorValue(content));
         const token =getAccessToken();
         axios
-            .post(API_BASE_ROOT+"/board/upload",{
+            .post("https://3.36.49.50:8080/board/upload",{
                 "content" : content,
                 "title" : title
                },
