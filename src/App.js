@@ -14,13 +14,13 @@ const App = () => {
   return (
       <>
       <BrowserRouter>
-            <Route path={process.env.PUBLIC_URL+"/"} component = {Home}  exact></Route>
-            <Route path={process.env.PUBLIC_URL+"/login"} component = {LogIn}></Route>
-            <AuthRoute path={process.env.PUBLIC_URL+"/write"} component = {Write}></AuthRoute>
-            <AuthRoute path={process.env.PUBLIC_URL+"/boards"} exact component = {Boards}></AuthRoute>
-            <AuthRoute path={process.env.PUBLIC_URL+"/boards/:boardId"} exact component = {SelectedBoard}></AuthRoute>
-            <Route path={process.env.PUBLIC_URL+"/signup"} component = {SignUp}></Route>
-            <Route path={process.env.PUBLIC_URL+"/result"} component = {MLResult}></Route>
+            <Route path="/" component = {Home}  exact></Route>
+            <Route path="/login" component = {LogIn}></Route>
+            <AuthRoute path="/write" component = {Write}></AuthRoute>
+            <AuthRoute path="/boards" exact component = {Boards}></AuthRoute>
+            <AuthRoute path="/boards/:boardId" exact component = {SelectedBoard}></AuthRoute>
+            <Route path="/signup" component = {SignUp}></Route>
+            <Route path="/result" component = {MLResult}></Route>
       </BrowserRouter>
       </>
    );
