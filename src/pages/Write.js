@@ -64,7 +64,7 @@ const Wirte = (props) =>{
         console.log(getCKEditorValue(content));
         const token =getAccessToken();
         axios
-            .post("https://3.36.49.50:8080/board/upload",{
+            .post("http://3.36.49.50:8080/board/upload",{
                 "content" : content,
                 "title" : title
                },

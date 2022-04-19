@@ -27,7 +27,7 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post("https://3.36.49.50:8080/auth/login",{
+            .post("http://3.36.49.50:8080/auth/login",{
                 "email" : email,
                 "password" : password
             })

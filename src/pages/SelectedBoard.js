@@ -20,7 +20,7 @@ const SelectedBoard = (props) =>{
         const token = getAccessToken();
         console.log(boardId);
         axios
-            .get("https://3.36.49.50:8080/board/"+boardId,
+            .get("http://3.36.49.50:8080/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token
