@@ -10,6 +10,7 @@ import getCKEditorValue from "../control/getCkEditorValue";
 import axios from "axios";
 import getAccessToken from "../control/getAccessToken";
 import { useHistory } from "react-router-dom";
+export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const Wirte = (props) =>{
 
@@ -64,7 +65,7 @@ const Wirte = (props) =>{
         console.log(getCKEditorValue(content));
         const token =getAccessToken();
         axios
-            .post("http://localhost:8080/board/upload",{
+            .post(API_BASE_ROOT+"/board/upload",{
                 "content" : content,
                 "title" : title
                },

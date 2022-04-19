@@ -8,6 +8,7 @@ import isPassword from "../control/isPassword";
 import '../css/signup.css'
 import NotLoginHomeNavBlack from "../components/NotLoginHomeNavBlack"
 import isPasswordSame from "../control/passwordValCheck";
+export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const SignUp = (props) =>{
     const [nickName, setNickName] = useState("");
@@ -94,7 +95,7 @@ const SignUp = (props) =>{
        event.preventDefault();
        console.log(nickName+" "+password+" "+email);
         axios
-            .post("http://localhost:8080/auth/signup",{
+            .post(API_BASE_ROOT+"/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password

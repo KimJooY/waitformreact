@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../css/post.css'
 import { useHistory } from "react-router-dom";
+export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const Boards = (props) =>{
 
@@ -21,7 +22,7 @@ const Boards = (props) =>{
         const token =getAccessToken();
         console.log(token);
         axios
-        .get("http://localhost:8080/board/me/list",
+        .get(API_BASE_ROOT+"/board/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token
