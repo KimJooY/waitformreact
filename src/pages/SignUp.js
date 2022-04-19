@@ -95,7 +95,7 @@ const SignUp = (props) =>{
        event.preventDefault();
        console.log(nickName+" "+password+" "+email);
         axios
-            .post("https://3.36.49.50:8080/auth/signup",{
+            .post("http://3.36.49.50:8080/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password

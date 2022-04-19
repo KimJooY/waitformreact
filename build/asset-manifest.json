@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/waitformreact/static/css/main.00758351.css",
-    "main.js": "/waitformreact/static/js/main.4a8662af.js",
-    "static/js/787.bda5b200.chunk.js": "/waitformreact/static/js/787.bda5b200.chunk.js",
-    "static/media/handshake.jpg": "/waitformreact/static/media/handshake.6ddb9ae752bdf6635874.jpg",
-    "index.html": "/waitformreact/index.html",
-    "main.00758351.css.map": "/waitformreact/static/css/main.00758351.css.map",
-    "main.4a8662af.js.map": "/waitformreact/static/js/main.4a8662af.js.map",
-    "787.bda5b200.chunk.js.map": "/waitformreact/static/js/787.bda5b200.chunk.js.map"
+    "main.css": "/static/css/main.d38b735a.css",
+    "main.js": "/static/js/main.ed19cdf2.js",
+    "static/js/787.bda5b200.chunk.js": "/static/js/787.bda5b200.chunk.js",
+    "static/media/handshake.jpg": "/static/media/handshake.6ddb9ae752bdf6635874.jpg",
+    "index.html": "/index.html",
+    "main.d38b735a.css.map": "/static/css/main.d38b735a.css.map",
+    "main.ed19cdf2.js.map": "/static/js/main.ed19cdf2.js.map",
+    "787.bda5b200.chunk.js.map": "/static/js/787.bda5b200.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00758351.css",
-    "static/js/main.4a8662af.js"
+    "static/css/main.d38b735a.css",
+    "static/js/main.ed19cdf2.js"
   ]
 }
