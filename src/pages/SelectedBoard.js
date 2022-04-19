@@ -7,6 +7,7 @@ import NavBlack from "../components/NavBlack";
 import isLogin from "../control/isLogin";
 import getCKEditorValue from "../control/getCkEditorValue";
 import '../css/selectedBoard.css'
+export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const SelectedBoard = (props) =>{
     const isloged = isLogin();
@@ -19,7 +20,7 @@ const SelectedBoard = (props) =>{
         const token = getAccessToken();
         console.log(boardId);
         axios
-            .get("http://localhost:8080/board/"+boardId,
+            .get(API_BASE_ROOT+"/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token
