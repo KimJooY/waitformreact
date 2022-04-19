@@ -95,7 +95,7 @@ const SignUp = (props) =>{
        event.preventDefault();
        console.log(nickName+" "+password+" "+email);
         axios
-            .post(API_BASE_ROOT+"/auth/signup",{
+            .post("${API_BASE_ROOT}/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password
