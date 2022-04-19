@@ -9,7 +9,6 @@ import getCKEditorValue from "../control/getCkEditorValue";
 import axios from "axios";
 import getAccessToken from "../control/getAccessToken";
 import { useHistory } from "react-router-dom";
-export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const Wirte = (props) =>{
 
@@ -44,7 +43,8 @@ const Wirte = (props) =>{
 
     },[numOfChars])
 
-    useState(()=>{
+
+    useEffect(()=>{
 
         if(!CharsOverCheck && !CharsUnderCheck)
             setCanSubmit(true);
