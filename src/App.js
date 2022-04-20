@@ -1,6 +1,6 @@
 import './css/home.css';
 import React from 'react';
-import { BrowserRouter, Route,  } from "react-router-dom";
+import { BrowserRouter, Route, HashRouter } from "react-router-dom";
 import LogIn from './pages/LogIn';
 import Write from './pages/Write';
 import Home from './pages/Home';
@@ -13,7 +13,7 @@ import SelectedBoard from './pages/SelectedBoard';
 const App = () => {
   return (
       <>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
             <Route path="/" component = {Home}  exact></Route>
             <Route path="/login" component = {LogIn}></Route>
             <AuthRoute path="/write" component = {Write}></AuthRoute>
@@ -21,7 +21,7 @@ const App = () => {
             <AuthRoute path="/boards/:boardId" exact component = {SelectedBoard}></AuthRoute>
             <Route path="/signup" component = {SignUp}></Route>
             <Route path="/result" component = {MLResult}></Route>
-      </BrowserRouter>
+      </HashRouter>
       </>
    );
 }
