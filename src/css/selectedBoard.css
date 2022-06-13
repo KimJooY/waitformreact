@@ -9,15 +9,18 @@
 }
 
 .selectedBoard {
-    margin: 0 50px;
+    margin: 0 0px;
     width: 800px;
     display: inline-block;
+    margin-right: 20px;
 }
 
 .selectedBoard-header{
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.15)
+    border-radius: 5px;
+    background-color: #060607;
+    color: #EFEDFF;
 }
 
 .selectedBoard-header ul{
@@ -43,9 +46,22 @@
     overflow: scroll;
 }
 
-.chat{
-    display: flex;
-    height: 700px;
-    width: 400px;
-    border: 1px solid black;
+.selectedBoard-contents::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #F5F5F5;
+  }
+  
+.selectedBoard-contents::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+.selectedBoard-contents::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #060607;
+  }
+
+
+.selectedBoard-contents::-webkit-scrollbar-button {
+    display: none;
 }

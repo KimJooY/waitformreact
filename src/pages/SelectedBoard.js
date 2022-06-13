@@ -1,36 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import axios from "axios";
-import getAccessToken from "../control/getAccessToken";
 import NavBlack from "../components/NavBlack";
+import Chat from "../components/Chat";
+import ChatOneToOne from "../components/ChatOneToOne";
+import getAccessToken from "../control/getAccessToken";
 import isLogin from "../control/isLogin";
 import getCKEditorValue from "../control/getCkEditorValue";
 import '../css/selectedBoard.css'
-export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const SelectedBoard = (props) =>{
     const isloged = isLogin();
     const {boardId} = useParams();
     const [title,setTitle] =useState("");
     const [content, setContent] = useState("");
-    const [date,setDate] = useState(""); 
+    const [date,setDate] = useState("");
+    const [writerNickName, setWriterNickName] = useState("");
+    const [writerMemberId, setWriterMemberId] = useState("");
+    const [myBoardOrOthersBoard, setMyBoardOrOthersBoard] = useState(props.location.state.whosBoard);
+    const [myNickName, setMyNickName] =useState(props.location.state.myNickName);
 
     useEffect(()=>{
         const token = getAccessToken();
-        console.log(boardId);
         axios
-            .get("http://3.36.49.50:8080/board/"+boardId,
+            .get("http://localhost:8080/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token
                 }
             })
             .then((response)=>{
+                console.log("현재 게시글 정보");
                 console.log(response);
                 setTitle(response.data.data.title);
                 setContent(response.data.data.content);
                 setDate(response.data.data.createdDate);
+                setWriterNickName(response.data.data.writerNickname);
+                setWriterMemberId(response.data.data.memberId);
             })
             .catch((error)=>{
                 console.log(error);
@@ -53,9 +59,8 @@ const SelectedBoard = (props) =>{
                         {content &&getCKEditorValue(content) }
                     </div>
                 </div>
-                <div className="chat">
-                    <p>추후 채팅을 위한 공간</p>
-                </div>
+                {myBoardOrOthersBoard &&<Chat writerMemberId = {writerMemberId} boardId = {boardId} writerNickName = {writerNickName} myNickName ={myNickName}></Chat>}
+                {!myBoardOrOthersBoard && <ChatOneToOne writerMemberId = {writerMemberId} boardId = {boardId} writerNickName = {writerNickName} myNickName ={myNickName}></ChatOneToOne>}
             </div>
             
         </>

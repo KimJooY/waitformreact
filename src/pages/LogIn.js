@@ -3,10 +3,8 @@ import "../css/login.css"
 import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios';
 import Footer from '../components/Footer';
-export const API_BASE_ROOT = process.env.API_BASE_ROOT;
 
 const LogIn = (props) =>{
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -27,15 +25,14 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post("http://3.36.49.50:8080/auth/login",{
+            .post("http://localhost:8080/auth/login",{
                 "email" : email,
                 "password" : password
             })
             .then(function(response){
+                console.log("로그인 성공");
                 console.log(response);
-                alert(response.data.message);
                 if(response.status === 200){
-                    alert("로그인 성공");
                     localStorage.setItem("accessToken",response.data.data.accessToken);
                     localStorage.setItem("refreshToken",response.data.data.refreshToken);
                     history.push('/');
@@ -43,6 +40,7 @@ const LogIn = (props) =>{
                 }
             })
             .catch(function(error){
+                console.log("로그인 실패");
                 console.log(error);
                 alert(error);
             })
