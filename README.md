@@ -145,3 +145,14 @@ Src:.
 ![매칭후채팅](https://user-images.githubusercontent.com/94374974/173530273-e6ae29e5-625a-4aba-9518-eff3b7b44671.png)
 
 
+## Acknowledgments
+
+- Goggle Font
+- ColorSpace
+- Font Awesome
+- ColorFly Color Picker
+- Pixabay
+- Pexels
+
+- 홈페이지 화면 이미지 출처 : https://www.pexels.com/ko-kr/photo/327540/
+- 사용한 모든 이미지는 저작권에 구애받지 않은 이미지 입니다.
