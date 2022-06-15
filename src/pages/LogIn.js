@@ -70,7 +70,7 @@ const LogIn = (props) =>{
                         <button className="in-btn" type='submit'>로그인</button>
                     </div>
                     <div className="btn-div">
-                        <button className="in-btn"><Link to='/signup'>회원가입</Link></button>
+                        <button className="in-btn" type='button'><Link to='/signup'>회원가입</Link></button>
                     </div>
                 </div>
             </form>
