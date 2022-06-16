@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/write.css"
 import AlarmModal from "./AlarmModal";
-
+import Loader from "../components/Loder";
 import NavBlack from "../components/NavBlack";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -25,6 +25,7 @@ const Wirte = (props) =>{
     const[numOfChars,setNumOfChars] = useState(0);
     const[CharsOverCheck, setCharsOverCheck] = useState(true);
     const[CharsUnderCheck, setCharsUnderCheck] = useState(true);
+    const[loading, setLoaing] = useState(false);
 
     const[canSubmit, setCanSubmit] =useState(false);
 
@@ -103,6 +104,7 @@ const Wirte = (props) =>{
                })
                console.log("글 등록 성공");
                const board_id = wRes.data.data.boardId;
+               setLoaing(true);
                const mRes = await axios.get("http://localhost:8000/ML/"+board_id);
                console.log("클러스터링된 결과");
                console.log(mRes);
@@ -123,12 +125,14 @@ const Wirte = (props) =>{
                 }
               })
                console.log("추천 성공");
+               setLoaing(false);
                alert((parseInt(mRes.data.clustered_id[0])+1)+", "+(parseInt(mRes.data.clustered_id[1])+1)+", "+
                     (parseInt(mRes.data.clustered_id[2])+1)+", "+(parseInt(mRes.data.clustered_id[3])+1)+", "+
                     (parseInt(mRes.data.clustered_id[4])+1) +"  회원에게 제안 완료");
                console.log(recc)
 
         }catch(error){
+            setLoaing(false);
             console.log("ML서버 실패 혹은 글 쓰기 실패 혹은 추천하기 실패");
             console.log(error);
         }
@@ -137,7 +141,7 @@ const Wirte = (props) =>{
     return (
         <>
             <NavBlack isloged={isloged} />
-
+            {loading && <Loader type='spin' color="#000000" message={"클러스터링 중"}></Loader>}
             <section className="write-section">
     
                 <div className="ckeditor-div">
