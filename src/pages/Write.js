@@ -103,7 +103,7 @@ const Wirte = (props) =>{
                })
                console.log("글 등록 성공");
                const board_id = wRes.data.data.boardId;
-               const mRes = await axios.get("http://127.0.0.1:8000/ML/"+board_id);
+               const mRes = await axios.get("http://localhost:8000/ML/"+board_id);
                console.log("클러스터링된 결과");
                console.log(mRes);
 
