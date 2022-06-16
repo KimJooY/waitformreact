@@ -13,7 +13,7 @@ const MyWritedBoard = (props)=>{
         const token =getAccessToken();
         console.log(props);
         axios
-        .get(process.env.SERVER_ROOT_URL+"/board/me/list",
+        .get(process.env.REACT_APP_SERVER_ROOT_URL+"/board/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

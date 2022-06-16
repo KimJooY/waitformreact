@@ -94,7 +94,7 @@ const SignUp = (props) =>{
        event.preventDefault();
     //    console.log(nickName+" "+password+" "+email);
         axios
-            .post(process.env.SERVER_ROOT_URL+"/auth/signup",{
+            .post(process.env.REACT_APP_SERVER_ROOT_URL+"/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password

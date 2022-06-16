@@ -18,7 +18,7 @@ const AlarmModal = (props)=>{
 
     const getReccomendList = async () =>{
         const token= getAccessToken();
-        await axios.get(process.env.SERVER_ROOT_URL+"/recommend/list",
+        await axios.get(process.env.REACT_APP_SERVER_ROOT_URL+"/recommend/list",
             {
                 headers : {
                     Authorization: 'Bearer ' + token
@@ -36,7 +36,7 @@ const AlarmModal = (props)=>{
 
     const getMyNickName = async () =>{
         const token= getAccessToken();
-        await axios.get(process.env.SERVER_ROOT_URL+"/member/me",
+        await axios.get(process.env.REACT_APP_SERVER_ROOT_URL+"/member/me",
             {
                 headers : {
                     Authorization: 'Bearer ' + token

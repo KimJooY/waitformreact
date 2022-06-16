@@ -14,7 +14,7 @@ const Chat = (props) =>{
 
 
     const options = {debug: false};
-    const sockJS = new SockJS(process.env.SERVER_ROOT_URL+"/ws-chat/");
+    const sockJS = new SockJS(process.env.REACT_APP_SERVER_ROOT_URL+"/ws-chat/");
     const client = Stomp.over(sockJS, options);
 
 
@@ -40,7 +40,7 @@ const Chat = (props) =>{
     const [receiver, setRiceiver] = useState();
 
     useEffect(()=>{
-        const url = process.env.SERVER_ROOT_URL+"/like/"+boardId;
+        const url = process.env.REACT_APP_SERVER_ROOT_URL+"/like/"+boardId;
         const getLikeMyBoard = async () => {
             await axios.get(url,{
                 headers : {
@@ -63,7 +63,7 @@ const Chat = (props) =>{
     useEffect(()=>{
 
         const getChatRooms = async ()=>{
-            const url = process.env.SERVER_ROOT_URL+"/chat/rooms"
+            const url = process.env.REACT_APP_SERVER_ROOT_URL+"/chat/rooms"
             await axios.get(url,
                 {
                     headers : {
@@ -110,7 +110,7 @@ const Chat = (props) =>{
     },[roomIdForNinkanme])
 
     useEffect(()=>{
-        const url = process.env.SERVER_ROOT_URL+"/chat/rooms/"+sroomId+"/messages";
+        const url = process.env.REACT_APP_SERVER_ROOT_URL+"/chat/rooms/"+sroomId+"/messages";
         const getMessages = async () => {
             await axios.get(url,{
                 headers : {

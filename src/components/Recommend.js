@@ -18,7 +18,7 @@ const Recommend = (props) => {
 
     const sendMessage = async (roomId) => {
         const options = {debug: false};
-        const sockJS = new SockJS(process.env.SERVER_ROOT_URL+"/ws-chat/");
+        const sockJS = new SockJS(process.env.REACT_APP_SERVER_ROOT_URL+"/ws-chat/");
         const client = Stomp.over(sockJS, options);
         const token = getAccessToken();
         const headers = { Authorization :'Bearer ' + token };
@@ -39,7 +39,7 @@ const Recommend = (props) => {
     }
 
     const onClickHandler = () =>{
-        const url = process.env.SERVER_ROOT_URL+"/board/"+boardId+"/like"
+        const url = process.env.REACT_APP_SERVER_ROOT_URL+"/board/"+boardId+"/like"
         const token = getAccessToken();
         axios.post(url,
             {
@@ -62,7 +62,7 @@ const Recommend = (props) => {
     };
 
     const getRecieverNickName = async () =>{
-        const url = process.env.SERVER_ROOT_URL+"/board/"+boardId;
+        const url = process.env.REACT_APP_SERVER_ROOT_URL+"/board/"+boardId;
         const token = getAccessToken();
         await axios
         .get(url,
@@ -84,7 +84,7 @@ const Recommend = (props) => {
     };
 
     const makeChatRoom = async () =>{
-        const url = process.env.SERVER_ROOT_URL+"/chat/rooms"
+        const url = process.env.REACT_APP_SERVER_ROOT_URL+"/chat/rooms"
         const token = getAccessToken();
         await axios
         .post(url,{
