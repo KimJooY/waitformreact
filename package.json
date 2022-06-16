@@ -17,6 +17,7 @@
     "node-html-parser": "^5.3.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-loading": "^2.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
     "sockjs-client": "^1.6.1",
