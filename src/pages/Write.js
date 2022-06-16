@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/write.css"
 import AlarmModal from "./AlarmModal";
-import Loader from "../components/Loder";
+import Loader from "../components/Loader";
 import NavBlack from "../components/NavBlack";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
