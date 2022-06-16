@@ -21,9 +21,12 @@ const SelectedBoard = (props) =>{
     const [myNickName, setMyNickName] =useState(props.location.state.myNickName);
 
     useEffect(()=>{
+
+        const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
         const token = getAccessToken();
         axios
-            .get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/"+boardId,
+            .get(serverURL+"/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token

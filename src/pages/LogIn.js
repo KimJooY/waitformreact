@@ -5,6 +5,9 @@ import axios from 'axios';
 import Footer from '../components/Footer';
 
 const LogIn = (props) =>{
+    
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -25,7 +28,7 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/auth/login",{
+            .post(serverURL+"/auth/login",{
                 "email" : email,
                 "password" : password
             })

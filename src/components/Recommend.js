@@ -8,6 +8,8 @@ import '../css/alarmmodal.css'
 
 const Recommend = (props) => {
 
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const myNickName = props.myNickName;
     const myMemberId = props.myMemberId;
     const boardId = props.boardId;
@@ -18,7 +20,7 @@ const Recommend = (props) => {
 
     const sendMessage = async (roomId) => {
         const options = {debug: false};
-        const sockJS = new SockJS("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/ws-chat/");
+        const sockJS = new SockJS(serverURL+"/ws-chat/");
         const client = Stomp.over(sockJS, options);
         const token = getAccessToken();
         const headers = { Authorization :'Bearer ' + token };
@@ -39,7 +41,7 @@ const Recommend = (props) => {
     }
 
     const onClickHandler = () =>{
-        const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/"+boardId+"/like"
+        const url = serverURL+"/board/"+boardId+"/like"
         const token = getAccessToken();
         axios.post(url,
             {
@@ -62,7 +64,7 @@ const Recommend = (props) => {
     };
 
     const getRecieverNickName = async () =>{
-        const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/"+boardId;
+        const url = serverURL+"/board/"+boardId;
         const token = getAccessToken();
         await axios
         .get(url,
@@ -84,7 +86,7 @@ const Recommend = (props) => {
     };
 
     const makeChatRoom = async () =>{
-        const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/chat/rooms"
+        const url = serverURL+"/chat/rooms"
         const token = getAccessToken();
         await axios
         .post(url,{

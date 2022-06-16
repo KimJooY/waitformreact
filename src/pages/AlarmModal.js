@@ -7,6 +7,8 @@ import '../css/alarmmodal.css'
 
 const AlarmModal = (props)=>{
 
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const [recommend, setRecommend] = useState();
     const [myNickName, setMyNickName] = useState();
 
@@ -18,7 +20,7 @@ const AlarmModal = (props)=>{
 
     const getReccomendList = async () =>{
         const token= getAccessToken();
-        await axios.get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/recommend/list",
+        await axios.get(serverURL+"/recommend/list",
             {
                 headers : {
                     Authorization: 'Bearer ' + token
@@ -36,7 +38,7 @@ const AlarmModal = (props)=>{
 
     const getMyNickName = async () =>{
         const token= getAccessToken();
-        await axios.get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/member/me",
+        await axios.get(serverURL+"/member/me",
             {
                 headers : {
                     Authorization: 'Bearer ' + token

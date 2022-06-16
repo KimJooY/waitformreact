@@ -7,12 +7,15 @@ import '../css/post.css'
 
 
 const MyWritedBoard = (props)=>{
+
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const [posts, setPosts] = useState([]);
     useEffect(()=>{
         const token =getAccessToken();
         console.log(props);
         axios
-        .get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/me/list",
+        .get(serverURL+"/board/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

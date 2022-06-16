@@ -8,6 +8,8 @@ import '../css/post.css'
 
 
 const MyContractBoard = (props)=>{
+    
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
 
     const [posts, setPosts] = useState([]);
     const [myNickName,setMyNickName] = useState("");
@@ -17,7 +19,7 @@ const MyContractBoard = (props)=>{
         console.log("MyContarctBoard props")
         console.log(props);
         axios
-        .get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/like/me/list",
+        .get(serverURL+"/like/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

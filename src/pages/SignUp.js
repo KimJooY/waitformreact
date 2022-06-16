@@ -10,6 +10,9 @@ import NotLoginHomeNavBlack from "../components/NotLoginHomeNavBlack"
 import isPasswordSame from "../control/passwordValCheck";
 
 const SignUp = (props) =>{
+
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const [nickName, setNickName] = useState("");
     const [password,setPassword] = useState("");
     const [passwordVal, setPasswordVal] = useState("");
@@ -94,7 +97,7 @@ const SignUp = (props) =>{
        event.preventDefault();
     //    console.log(nickName+" "+password+" "+email);
         axios
-            .post("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/auth/signup",{
+            .post(serverURL+"/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password

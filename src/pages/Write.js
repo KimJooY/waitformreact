@@ -13,6 +13,8 @@ import { useHistory } from "react-router-dom";
 
 const Wirte = (props) =>{
 
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const history = useHistory();
 
     const isloged = isLogin();
@@ -90,7 +92,7 @@ const Wirte = (props) =>{
     const write_CallML = async () =>{
         const token = getAccessToken();
         try{
-            const wRes = await axios.post("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/upload",{
+            const wRes = await axios.post(serverURL+"/board/upload",{
                 "content" : content,
                 "title" : title
                },
@@ -105,7 +107,7 @@ const Wirte = (props) =>{
                console.log("클러스터링된 결과");
                console.log(mRes);
 
-               const recc = await axios.post("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/recommend",{
+               const recc = await axios.post(serverURL+"/recommend",{
                 "members":[
                     {"memberId":mRes.data.clustered_id[0]+1},
                     {"memberId":mRes.data.clustered_id[1]+1},

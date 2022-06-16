@@ -8,13 +8,15 @@ import '../css/chat.css';
 
 const Chat = (props) =>{
 
+    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+
     const token = getAccessToken();
     const headers = { Authorization :'Bearer ' + token };
     const chatBox = document.getElementsByClassName("chat-body")[0];
 
 
     const options = {debug: false};
-    const sockJS = new SockJS("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/ws-chat/");
+    const sockJS = new SockJS(serverURL+"/ws-chat/");
     const client = Stomp.over(sockJS, options);
 
 
@@ -40,7 +42,7 @@ const Chat = (props) =>{
     const [receiver, setRiceiver] = useState();
 
     useEffect(()=>{
-        const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/like/"+boardId;
+        const url = serverURL+"/like/"+boardId;
         const getLikeMyBoard = async () => {
             await axios.get(url,{
                 headers : {
@@ -63,7 +65,7 @@ const Chat = (props) =>{
     useEffect(()=>{
 
         const getChatRooms = async ()=>{
-            const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/chat/rooms"
+            const url = serverURL+"/chat/rooms"
             await axios.get(url,
                 {
                     headers : {
@@ -110,7 +112,7 @@ const Chat = (props) =>{
     },[roomIdForNinkanme])
 
     useEffect(()=>{
-        const url = "ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/chat/rooms/"+sroomId+"/messages";
+        const url = serverURL+"/chat/rooms/"+sroomId+"/messages";
         const getMessages = async () => {
             await axios.get(url,{
                 headers : {
