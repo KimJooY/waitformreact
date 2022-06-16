@@ -17,7 +17,7 @@ const MyContractBoard = (props)=>{
         console.log("MyContarctBoard props")
         console.log(props);
         axios
-        .get(process.env.REACT_APP_SERVER_ROOT_URL+"/like/me/list",
+        .get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/like/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

@@ -94,7 +94,7 @@ const SignUp = (props) =>{
        event.preventDefault();
     //    console.log(nickName+" "+password+" "+email);
         axios
-            .post(process.env.REACT_APP_SERVER_ROOT_URL+"/auth/signup",{
+            .post("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/auth/signup",{
                 "email" : email,
                 "nickname" : nickName,
                 "password" : password

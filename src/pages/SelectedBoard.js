@@ -23,7 +23,7 @@ const SelectedBoard = (props) =>{
     useEffect(()=>{
         const token = getAccessToken();
         axios
-            .get(process.env.REACT_APP_SERVER_ROOT_URL+"/board/"+boardId,
+            .get("ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token
