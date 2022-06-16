@@ -28,7 +28,7 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post("http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080/auth/login",{
+            .post(serverURL+"/auth/login",{
                 "email" : email,
                 "password" : password
             })

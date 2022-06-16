@@ -123,9 +123,9 @@ const Wirte = (props) =>{
                 }
               })
                console.log("추천 성공");
-               alert(parseInt(mRes.data.clustered_id[0])+1+", "+parseInt(mRes.data.clustered_id[1])+1+", "+
-                    parseInt(mRes.data.clustered_id[2])+1+", "+parseInt(mRes.data.clustered_id[3])+1+", "+
-                    parseInt(mRes.data.clustered_id[4])+1 +"  회원에게 제안 완료");
+               alert((parseInt(mRes.data.clustered_id[0])+1)+", "+(parseInt(mRes.data.clustered_id[1])+1)+", "+
+                    (parseInt(mRes.data.clustered_id[2])+1)+", "+(parseInt(mRes.data.clustered_id[3])+1)+", "+
+                    (parseInt(mRes.data.clustered_id[4])+1) +"  회원에게 제안 완료");
                console.log(recc)
 
         }catch(error){
