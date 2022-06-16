@@ -25,7 +25,7 @@ const LogIn = (props) =>{
         console.log(email +" "+password);
 
         axios
-            .post(process.env.SERVER_ROOT_URL+"/auth/login",{
+            .post("${process.env.SERVER_ROOT_URL}/auth/login",{
                 "email" : email,
                 "password" : password
             })
