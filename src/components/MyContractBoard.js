@@ -17,7 +17,7 @@ const MyContractBoard = (props)=>{
         console.log("MyContarctBoard props")
         console.log(props);
         axios
-        .get("http://localhost:8080/like/me/list",
+        .get(process.env.SERVER_ROOT_URL+"/like/me/list",
            {
              headers: {
                Authorization: 'Bearer ' + token

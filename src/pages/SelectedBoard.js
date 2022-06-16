@@ -23,7 +23,7 @@ const SelectedBoard = (props) =>{
     useEffect(()=>{
         const token = getAccessToken();
         axios
-            .get("http://localhost:8080/board/"+boardId,
+            .get(process.env.SERVER_ROOT_URL+"/board/"+boardId,
             {
                 headers : {
                     Authorization: 'Bearer ' + token

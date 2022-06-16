@@ -90,7 +90,7 @@ const Wirte = (props) =>{
     const write_CallML = async () =>{
         const token = getAccessToken();
         try{
-            const wRes = await axios.post("http://localhost:8080/board/upload",{
+            const wRes = await axios.post(process.env.SERVER_ROOT_URL+"/board/upload",{
                 "content" : content,
                 "title" : title
                },
@@ -105,7 +105,7 @@ const Wirte = (props) =>{
                console.log("클러스터링된 결과");
                console.log(mRes);
 
-               const recc = await axios.post("http://localhost:8080/recommend",{
+               const recc = await axios.post(process.env.SERVER_ROOT_URL+"/recommend",{
                 "members":[
                     {"memberId":mRes.data.clustered_id[0]+1},
                     {"memberId":mRes.data.clustered_id[1]+1},

@@ -13,7 +13,7 @@ const ChatOneToOne = (props) =>{
 
 
     const options = {debug: false};
-    const sockJS = new SockJS("http://localhost:8080/ws-chat/");
+    const sockJS = new SockJS(process.env.SERVER_ROOT_URL+"/ws-chat/");
     const client = Stomp.over(sockJS, options);
     
     
@@ -40,8 +40,8 @@ const ChatOneToOne = (props) =>{
 
     useEffect(()=>{
         const token = getAccessToken();
-        const url = "http://localhost:8080/chat/rooms";
-        const url2 = "http://localhost:8080/member/"+myNickName;
+        const url = process.env.SERVER_ROOT_URL+"/chat/rooms";
+        const url2 = process.env.SERVER_ROOT_URL+"/member/"+myNickName;
         
         myNickName && writerNickName && axios.all([
             axios.get(url,
@@ -109,7 +109,7 @@ const ChatOneToOne = (props) =>{
         }
 
         const getMessages = async () =>{
-            const url = "http://localhost:8080/chat/rooms/"+roomId+"/messages"
+            const url = process.env.SERVER_ROOT_URL+"/chat/rooms/"+roomId+"/messages"
             await axios.get(url,{
                 headers : {
                     Authorization: 'Bearer ' + token
