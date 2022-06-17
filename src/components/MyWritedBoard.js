@@ -8,7 +8,7 @@ import '../css/post.css'
 
 const MyWritedBoard = (props)=>{
 
-    const serverURL = "http://ec2-15-165-17-121.ap-northeast-2.compute.amazonaws.com:8080"
+    const serverURL = "http://localhost:8080"
 
     const [posts, setPosts] = useState([]);
     useEffect(()=>{
